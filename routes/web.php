@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BookingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('main-page');
 });
+
+Route::get('/customer/booking', [BookingController::class, 'customerBooking']);
+Route::post('/customer/booking', [BookingController::class, 'show']);
